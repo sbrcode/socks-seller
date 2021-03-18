@@ -120,6 +120,7 @@ p {
 
 .product-image,
 .product-info {
+  display: inline-block;
   width: 25%;
 }
 
