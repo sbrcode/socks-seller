@@ -1,7 +1,7 @@
 <template>
   <div class="product">
     <div class="product-image">
-      <img src="">
+      <img src="image">
     </div>
     <div class="product-info">
       <h1>{{ product }}</h1>
@@ -13,7 +13,8 @@
 export default {
   data() {
     return {
-      product: 'Socks'
+      product: 'Socks',
+      image: '@/assets/socks_geren.jpg'
     }
   }
 }
