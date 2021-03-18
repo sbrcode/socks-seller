@@ -1,20 +1,63 @@
 <template>
-  <div class="product">
+  <div class="socks">
     <div class="product-image">
-      <img src="image">
+      <img :src="image">
     </div>
     <div class="product-info">
       <h1>{{ product }}</h1>
+      <p v-if="inStock">In Stock</p>
+      <p v-else>Out of Stock</p>
+      <ul>
+        <li v-for="detail in details" :key="detail">{{ detail }}</li>
+      </ul>
+      <div v-for="variant in variants"
+            :key="variant.variantId"
+            class="color-circle"
+            :style="{ backgroundColor: variant.variantColor }"
+            @mouseover="updateProduct(variant.variantImage)"
+            >
+      </div>
+      <button v-on:click="addToCart"
+              :disabled="!inStock"
+              :class="{ disabledButton: !inStock }"
+              >Add to Cart</button>
+      <div class="cart">
+        <p>Cart({{ cart }})</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'socks-seller',
   data() {
     return {
-      product: 'Socks',
-      image: '@/assets/socks_geren.jpg'
+      product: "Socks",
+      image: require("@/assets/socks_green.jpg"),
+      inStock: true,
+      details: ["80% cotton", "20% polyester", "Gender-neutral"],
+      variants: [
+        {
+          variantId: 2234,
+          variantColor: "green",
+          variantImage: require("@/assets/socks_green.jpg"),
+        },
+        {
+          variantId: 2235,
+          variantColor: "blue",       
+          variantImage: require("@/assets/socks_blue.jpg"),
+        }
+      ],
+      cart: 0,
+    }
+  },
+  methods: {
+    addToCart() {
+      this.cart++
+    },
+    updateProduct(variantImage) {
+      this.image = variantImage;
     }
   }
 }

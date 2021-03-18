@@ -120,7 +120,7 @@ p {
 
 .product-image,
 .product-info {
-  width: 50%;
+  width: 25%;
 }
 
 .review-form {
