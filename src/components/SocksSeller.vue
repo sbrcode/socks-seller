@@ -1,15 +1,20 @@
 <template>
   <div class="socks">
+
     <div class="product-image">
       <img :src="image">
     </div>
+
     <div class="product-info">
+      
       <h1>{{ product }}</h1>
       <p v-if="inStock">In Stock</p>
       <p v-else>Out of Stock</p>
+
       <ul>
         <li v-for="detail in details" :key="detail">{{ detail }}</li>
       </ul>
+
       <div v-for="variant in variants"
             :key="variant.variantId"
             class="color-circle"
@@ -17,13 +22,18 @@
             @mouseover="updateProduct(variant.variantImage)"
             >
       </div>
+
       <button v-on:click="addToCart"
               :disabled="!inStock"
               :class="{ disabledButton: !inStock }"
-              >Add to Cart</button>
+              >
+        Add to Cart
+      </button>
+
       <div class="cart">
         <p>Cart({{ cart }})</p>
       </div>
+
     </div>
   </div>
 </template>
@@ -54,11 +64,11 @@ export default {
   },
   methods: {
     addToCart() {
-      this.cart++
+      this.cart++;
     },
     updateProduct(variantImage) {
       this.image = variantImage;
-    }
+    },
   }
 }
 </script>
