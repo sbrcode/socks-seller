@@ -40,7 +40,6 @@
 
 <script>
 export default {
-  name: 'socks-seller',
   data() {
     return {
       brand: "So Socket",
