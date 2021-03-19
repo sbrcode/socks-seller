@@ -48,6 +48,7 @@
 
 <script>
 export default {
+  name: 'product-review',
   data() {
     return {
       name: null,
