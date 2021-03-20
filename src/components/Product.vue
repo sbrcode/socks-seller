@@ -31,10 +31,6 @@
         Add to Cart
       </button>
 
-      <div class="cart">
-        <p>Cart({{ cart }})</p>
-      </div>
-
     </div>
   </div>
 </template>
@@ -68,16 +64,15 @@ export default {
           variantQuantity: 0,
         }
       ],
-      cart: 0,
     }
   },
   methods: {
     addToCart() {
-      this.cart++;
+      this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId);
     },
     updateProduct(index) {
       this.selectedVariant = index;
-    },
+    }
   },
   computed: {
     title() {
