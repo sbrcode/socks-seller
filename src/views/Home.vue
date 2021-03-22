@@ -1,16 +1,16 @@
 <template>
   <div>
-    <SocksSeller/>
+    <SocksMarket />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import SocksSeller from '@/components/SocksSeller.vue'
+import SocksMarket from '@/components/SocksMarket.vue'
 
 export default {
   components: {
-    SocksSeller
+    SocksMarket
   }
 }
 </script>

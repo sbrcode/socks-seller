@@ -120,7 +120,8 @@ p {
 
 .product-image,
 .product-info {
-  width: 50%;
+  display: inline-block;
+  width: 25%;
 }
 
 .review-form {
