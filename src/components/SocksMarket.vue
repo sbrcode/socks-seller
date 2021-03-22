@@ -32,10 +32,7 @@ export default {
   methods: {
     updateCart(id) {
       this.cart.push(id);
-    },
-    // addReview(productReview) {
-    //   this.reviews.push(productReview);
-    // }
+    }
   }
 }
 </script>
